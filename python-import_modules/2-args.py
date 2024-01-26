@@ -6,7 +6,7 @@ if __name__ == "__main__":
     nbArgs = len(args)
 
     if nbArgs == 0:
-        print("{} argument.".format(nbArgs), end="\n")
+        print("{} arguments.".format(nbArgs), end="\n")
     elif nbArgs == 1:
         print("{} argument:".format(nbArgs), end="\n")
     elif nbArgs > 1:
