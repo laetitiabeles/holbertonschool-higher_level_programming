@@ -6,10 +6,11 @@ if __name__ == "__main__":
     nbArgs = len(args)
 
     if nbArgs == 0:
-        print("{} argument.".format(nbArgs))
+        print("0 argument.")
     elif nbArgs == 1:
-        print("{} argument:".format(nbArgs))
-    elif nbArgs > 1:
+        print("1 argument:")
+        print("1: {}".format(args[0]))
+    else:
         print("{} arguments:".format(nbArgs))
 
     for index, value in enumerate(args, 1):
