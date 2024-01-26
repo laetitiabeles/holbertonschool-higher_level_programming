@@ -10,7 +10,7 @@ if __name__ == "__main__":
     elif nbArgs == 1:
         print("1 argument:")
         print("1: {}".format(args[0]))
-    else:
+    elif nbArgs > 1:
         print("{} arguments:".format(nbArgs))
 
     for index, value in enumerate(args, 1):
