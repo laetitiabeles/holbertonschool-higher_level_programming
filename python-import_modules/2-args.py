@@ -5,10 +5,10 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     nbArgs = len(args)
 
-    if nbArgs == 1:
-        print("{} argument:".format(nbArgs), end="\n")
-    elif nbArgs == 0:
+    if nbArgs == 0:
         print("{} argument.".format(nbArgs), end="\n")
+    elif nbArgs == 1:
+        print("{} argument:".format(nbArgs), end="\n")
     elif nbArgs > 1:
         print("{} arguments:".format(nbArgs), end="\n")
 
