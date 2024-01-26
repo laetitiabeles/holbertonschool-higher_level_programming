@@ -6,7 +6,7 @@ if __name__ == "__main__":
     nbArgs = len(args)
 
     if nbArgs == 0:
-        print("0 argument.")
+        print("0 arguments.")
     elif nbArgs == 1:
         print("1 argument:")
         print("1: {}".format(args[0]))
