@@ -7,7 +7,7 @@ Function that adds 2 integers.
 
 
 def add_integer(a, b=98):
-        """
+    """
     Args:
         a (int or float): First value.
         b (int or float, optional): Second value. Defaults to 98.
@@ -18,8 +18,15 @@ def add_integer(a, b=98):
     Returns:
         int: The addition of a and b.
     """
-    if not isinstance(a, (int, float)):
+
+    if isinstance(a, (int, float)):
+        a = int(a)
+    else:
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
+
+    if isinstance(b, (int, float)):
+        b = int(b)
+    else:
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+
+    return a + b
