@@ -25,6 +25,7 @@ def matrix_divided(matrix, div):
     """
 
 
+
     if (
         not isinstance(matrix, list) or matrix == [] or
         not all(isinstance(row, list) for row in matrix) or
@@ -45,7 +46,7 @@ def matrix_divided(matrix, div):
     new_matrix = []
 
     for row in matrix:
-        for num in row:
-            new_matrix.append(round(num / div, 2))
+        new_row = [round(num / div, 2) for num in row]
+        new_matrix.append(new_row)
 
     return new_matrix
