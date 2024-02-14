@@ -8,12 +8,6 @@ class BaseGeometry:
     """
     class BaseGeometry
     """
-    def __init__(self, width, height):
-        """Initializes the `width` and `height` properties"""
-        self.__width = width
-        self.__height = height
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
 
     def area(self):
         """Raises an exception when you call this function"""
@@ -32,3 +26,12 @@ class BaseGeometry:
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
+
+    class Rectangle(BaseGeometry):
+        """A representation of a rectangle"""
+        def __init__(self, width, height):
+            """Initializes the `width` and `height` properties"""
+            self.__width = width
+            self.__height = height
+            self.integer_validator("width", width)
+            self.integer_validator("height", height)
