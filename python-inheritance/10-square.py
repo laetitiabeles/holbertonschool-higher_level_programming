@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 """ class Square that inherits from BaseGeometry """
 
-BaseGeometry = __import__('9-rectangle').BaseGeometry
+BaseGeometry = __import__('9-rectangle').Rectangle
 
 
 class Square(BaseGeometry):
+    """define a square
+    Args:
+        Rectangle (Rectangle): mother class
+    """
     def __init__(self, size):
         """init a square
         Args:
