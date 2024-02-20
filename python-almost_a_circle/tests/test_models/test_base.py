@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import unittest
+import unittest, json
 from models.base import Base
 
 """ Create a test class for the Base class """
@@ -9,35 +9,74 @@ from models.base import Base
 class testBase(unittest.TestCase):
     """ Testing base """
 
-    def test_no_id(self):
-        """ no id """
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
+    @classmethod
+    def setUpClass(cls):
+        """ setUpClass """
+        cls.base_instance = Base()
+        """ Structure qui associe un value à un test """
+        cls.id_values = {
+            'test_id_none': id(None),
+            'test_id': 12,
+            'test_id_string': "string",
+            'test_id_negative': -5,
+            'test_id_float': 6.5,
+            'test_id_is_zero': 0,
+            'test_id_list': [1, 2, 3],
+            'test_id_dict': {"id": 109},
+            'test_id_tuple': (8,)
+        }
+
+    def test_id_none(self):
+        """ id none """
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
 
     def test_id(self):
         """ id """
-        b2 = Base(12)
-        self.assertEqual(b2.id, 12)
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
 
     def test_id_string(self):
         """ id string """
-        b3 = Base("string")
-        self.assertEqual(b3.id, "string")
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
 
     def test_id_negative(self):
         """ id negative """
-        b4 = Base(-5)
-        self.assertEqual(b4.id, -5)
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
 
     def test_id_float(self):
         """ id float """
-        b5 = Base(5.5)
-        self.assertEqual(b5.id, 5.5)
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
 
     def test_id_is_zero(self):
         """ id is zero """
-        b6 = Base(0)
-        self.assertEqual(b6.id, 0)
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
+
+    def test_id_list(self):
+        """ id is a list """
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
+
+    def test_id_dict(self):
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
+
+    def test_id_tuple(self):
+        id_value = self.id_values[self._testMethodName]
+        self.base_instance.id = id_value
+        self.assertEqual(self.base_instance.id, id_value)
 
 if __name__ == '__main__':
     unittest.main()
