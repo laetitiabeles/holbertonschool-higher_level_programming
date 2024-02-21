@@ -15,7 +15,7 @@ class testBase(unittest.TestCase):
         cls.test_instance = Base()
         """ Structure qui associe un value à un test """
         cls.id_values = {
-            'test_id_none': id(None),
+            'test_id_none': None,
             'test_id': 12,
             'test_id_string': "string",
             'test_id_negative': -5,
@@ -37,7 +37,7 @@ class testBase(unittest.TestCase):
         """ id none """
         id_value = self.id_values[self._testMethodName]
         self.test_instance.id = id_value
-        self.assertEqual(self.test_instance.id, id_value)
+        self.assertIsNone(self.test_instance.id)
 
     def test_id(self):
         """ id """
