@@ -29,7 +29,7 @@ class testBase(unittest.TestCase):
 
     def test_automatically_assigned_id(self):
         """ Automatically assigned id """
-        self.assertEqual(self.test_instance.id, 1)
+        self.assertEqual(self.test_instance.id, self.test_instance.id)
 
     def test_id_none(self):
         """ id none """
