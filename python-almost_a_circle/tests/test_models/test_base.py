@@ -9,19 +9,19 @@ from models.base import Base
 class testBase(unittest.TestCase):
     """ Testing base """
 
-    id_value = Base(id)
-    test_instance = Base(id_value)
+    def setUpClass(cls):
+        """ setUpClass """
+        cls.test_instance = Base()
 
     def test_more_creation(self):
-        self.test_instance.id_value = 11
+        self.test_instance.id = 11
         test2 = Base(42)
         test3 = Base(1337)
-        self.assertEqual(self.test_instance.id_value, 11)
+        self.assertEqual(self.test_instance.id, 11)
         self.assertEqual(test2.id, 42)
         self.assertEqual(test3.id, 1337)
 
     def test_None_id(self):
-        self.test_instance = Base(None)
         test2 = Base(None)
         self.assertEqual(self.test_instance.id, test2.id - 1)
 
