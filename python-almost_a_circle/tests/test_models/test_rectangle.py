@@ -45,5 +45,12 @@ class testRectangle(testBase):
         self.test_instance.y = 45
         self.assertEqual(self.test_instance.y, 45)
 
+    def test_width_height(self):
+        """Testing width and height"""
+        self.test_instance.width = 1
+        self.test_instance.height = 2
+        self.assertEqual(self.test_instance.width, 1)
+        self.assertEqual(self.test_instance.height, 2)
+
 if __name__ == '__main__':
     unittest.main()
