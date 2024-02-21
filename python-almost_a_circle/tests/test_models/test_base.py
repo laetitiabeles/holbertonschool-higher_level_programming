@@ -19,10 +19,5 @@ class testBase(unittest.TestCase):
         test_instance2 = Base()
         self.assertEqual(self.test_instance.id, test_instance2.id - 1)
 
-
-if __name__ == '__main__':
-    unittest.main()
-
-
 if __name__ == '__main__':
     unittest.main()
