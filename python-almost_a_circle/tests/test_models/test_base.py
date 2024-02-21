@@ -24,12 +24,11 @@ class testBase(unittest.TestCase):
             'test_id_list': [1, 2, 3],
             'test_id_dict': {"id": 109},
             'test_id_tuple': (8,),
-            'test_automatically_assigned_id': 1
+            'test_automatically_assigned_id': cls.test_instance
         }
 
     def test_automatically_assigned_id(self):
         """ Automatically assigned id """
-        self.test_instance = Base(1)
         self.assertEqual(self.test_instance.id, 1)
 
     def test_id_none(self):
