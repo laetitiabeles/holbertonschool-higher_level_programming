@@ -23,8 +23,7 @@ class testBase(unittest.TestCase):
             'test_id_is_zero': 0,
             'test_id_list': [1, 2, 3],
             'test_id_dict': {"id": 109},
-            'test_id_tuple': (8,),
-            'test_automatically_assigned_id': cls.test_instance
+            'test_id_tuple': (8,)
         }
 
     def test_automatically_assigned_id(self):
