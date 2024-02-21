@@ -9,10 +9,7 @@ from models.base import Base
 class testBase(unittest.TestCase):
     """ Testing base """
 
-    @classmethod
-    def setUpClass(cls):
-        """ setUpClass """
-        cls.test_instance = Base()
+    test_instance = Base()
 
     def test_no_instance_creation(self):
         self.test_instance = Base()
